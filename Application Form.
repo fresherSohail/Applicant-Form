@@ -1,0 +1,94 @@
+<html>
+<head>
+<link href= "file:///C:/Users/admin/eclipse-workspace/Practice/src/main/java/webapp/PracticeFile.css" rel="stylesheet">
+<script>
+function validateForm(event){
+var firstName = document.getElementById('firstName').value;
+var lastName = document.getElementById('lastName').value;
+var childage = document.getElementById('childage').value;
+var childFirstName = document.getElementById('childFirstName').value;
+var childLastName = document.getElementById('childLastName').value;
+var schoolName = document.getElementById('schoolName').value;
+var streetName1 = document.getElementById('streetName1').value;
+var streetName2 = document.getElementById('streetName2').value;
+var cityName = document.getElementById('cityName').value;
+var region = document.getElementById('region').value;
+var zipCode = document.getElementById('zipCode').value;
+var phoneNumber = document.getElementById('phoneNumber').value;
+
+if(!firstName || !lastName || !childage|| !childFirstName || !childLastName || !schoolName || !streetName1 || !streetName2 || !cityName || !region || !zipCode || !phoneNumber){
+	alert("Please fill the required information.");
+	event.preventDefault();
+	return false;
+}
+return true;
+}
+</script>
+
+<title>
+Admission Form.
+</title>
+</head>
+
+<body>
+<div id ="div1">
+
+<form onsubmit ="return validateForm(event)">
+
+<div id ="div2">
+<h1>Private School Application</h1>
+
+<div class="NameSection">
+<h4>Parent/Guardian name: </h4>
+<input type="text" placeholder="First Name" id="firstName" name="firstName">
+<input type="text" placeholder="Last Name" id="lastName">
+</div>
+
+
+<div class ="secondsection">
+<h4>How old your child will be when they start out the school year</h4>
+<input type="number" id="childage">
+</div>
+
+ <div class ="Thirdsection">
+<h4>Child Name</h4>
+<input type="text" placeholder="First" id="childFirstName">
+<input type="text" placeholder="Last" id="childLastName">
+</div>
+ 
+ <div class="fourthSection">
+<h4>The school he come from: </h4>
+<input type="text" id="schoolName">
+</div>
+ 
+ <div class ="fithsection">
+<h4>Home Address: </h4>
+<input type="text" placeholder="Street Address" id="streetName1"><br>
+<input type="text" placeholder="Street Address Line 2" id="streetName2"> <br>
+<input type="text" placeholder="City" id="cityName">
+<input type="text" placeholder="Region" id="region">
+<input type="text" placeholder="Postal/Zip Code" id="zipCode">
+<select name="city" id="city">
+<option value="Mumbai">Mumbai</option>
+<option value="Pune">Pune</option>
+<option value="Goa">Goa</option>
+<option value="Hyderabad">Hyderabad</option>
+</select>
+</div>
+ 
+<div class ="sixthsection">
+<h4>Phone Number</h4>
+<input type="number" id="phoneNumber" name="phoneNumber">
+</div>
+
+<div class ="submit">
+<button type="submit" value="submit">
+Submit
+</button>
+</div>
+
+</div>
+</form>
+</div>
+</body>
+</html>
