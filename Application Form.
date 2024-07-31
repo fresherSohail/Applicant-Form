@@ -3,25 +3,30 @@
 <link href= "file:///C:/Users/admin/eclipse-workspace/Practice/src/main/java/webapp/PracticeFile.css" rel="stylesheet">
 <script>
 function validateForm(event){
-var firstName = document.getElementById('firstName').value;
-var lastName = document.getElementById('lastName').value;
-var childage = document.getElementById('childage').value;
-var childFirstName = document.getElementById('childFirstName').value;
-var childLastName = document.getElementById('childLastName').value;
-var schoolName = document.getElementById('schoolName').value;
-var streetName1 = document.getElementById('streetName1').value;
-var streetName2 = document.getElementById('streetName2').value;
-var cityName = document.getElementById('cityName').value;
-var region = document.getElementById('region').value;
-var zipCode = document.getElementById('zipCode').value;
-var phoneNumber = document.getElementById('phoneNumber').value;
-
-if(!firstName || !lastName || !childage|| !childFirstName || !childLastName || !schoolName || !streetName1 || !streetName2 || !cityName || !region || !zipCode || !phoneNumber){
-	alert("Please fill the required information.");
-	event.preventDefault();
-	return false;
-}
-return true;
+	const fields = [
+		{id:'firstName', name:'Parent First Name'},
+		{id:'lastName', name:'Parent Last Name'},
+		{id:'childage', name:'Child Age'},
+		{id: 'childFirstName', name:'Child First Name'},
+		{id: 'childLastName', name:'Child Last Name'},
+		{id: 'schoolName', name: 'School Name'},
+		{id: 'streetName1', name:'Street Line 1'},
+		{id: 'streetName2', name: 'Street Line 2'},
+		{id: 'cityName', name: 'City Name'},
+		{id: 'region', name: 'Region'},
+		{id: 'zipCode', name: 'Zip Code'},
+		{id: 'phoneNumber', name:'Phone Number'},
+	]
+	
+	for(const field of fields){
+		const value = document.getElementById(field.id).value;
+		if(!value){
+			alert('Please fill the' + " " + field.name + " " + 'feild');
+			event.preventDefault();
+			return false;
+		}
+	}
+	return true;	
 }
 </script>
 
@@ -31,6 +36,7 @@ Admission Form.
 </head>
 
 <body>
+<img src="https://images.unsplash.com/photo-1669023414162-8b0573b9c6b2?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
 <div id ="div1">
 
 <form onsubmit ="return validateForm(event)">
